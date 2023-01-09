@@ -1,9 +1,65 @@
 /*Some necessary adjustments*/
-h1, body, html, main {
+body,
+html,
+main {
   margin: 0;
 }
 /*Import the font and set the default size*/
 html {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 18px
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+}
+header {
+  position: relative;
+  text-align: center;
+}
+main {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.first-img {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.text-on-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 75px;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+.cooking-info-img {
+  width: 50%;
+  align-self: center;
+}
+
+.ingredient-list li::before {
+  content: "- ";
+  text-indent: 20px;
+}
+.ingredient-list {
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+}
+.cooking-info-list {
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+}
+.cooking-info-list > li {
+  counter-increment: my-counter;
+}
+.cooking-info-list > li::before {
+  content: counter(my-counter) ") ";
 }
